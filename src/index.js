@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useState } from "react";
+import { render } from "react-dom";
+import { ModalDialog } from "./lib";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const App = () => {
+  const [openModal, setOpenModal] = useState(false);
+  const onOpenModal = () => setOpenModal(true);
+  const onCloseModal = () => setOpenModal(false);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  const handleClickOpen = () => {
+    onOpenModal();
+  };
+  return (
+    <div style={{ width: 640, margin: "15px auto" }}>
+      <h1>Modal Dialog</h1>
+      <button type="button" onClick={handleClickOpen}>
+        Click to open the dialog modal
+      </button>
+      <ModalDialog
+        open={openModal}
+        title="Title of the modal"
+        description="Description of the modal"
+        closeContent="Close"
+        handleCloseModal={onCloseModal}
+      />
+    </div>
+  );
+};
+render(<App />, document.getElementById("root"));
