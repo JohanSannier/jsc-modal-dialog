@@ -2,7 +2,7 @@
   "name": "jsc-modal-dialog",
   "description": "Modal dialog package created for the 14th project of the OpenClassrooms' frontend development program",
   "author": "JSC",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [
     "react",
     "components",
