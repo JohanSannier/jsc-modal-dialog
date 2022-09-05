@@ -16,6 +16,7 @@ const App = () => {
       <button type="button" onClick={handleClickOpen}>
         Click to open the dialog modal
       </button>
+
       <ModalDialog
         open={openModal}
         title="Title of the modal"
